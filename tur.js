@@ -27,9 +27,9 @@ AFRAME.registerComponent('tour',{
             }
         ]
 
-        let previousXPosition = -60
+        let previousXPosition = -75
 
-        for(var i in thumbnailsRef){
+        for(var i of thumbnailsRef){
             const posX = previousXPosition+30;
             const posY = 8;
             const posZ = -40;
@@ -57,6 +57,7 @@ AFRAME.registerComponent('tour',{
             color:'yellow',
             opacity:1
         })
+        entityEl.setAttribute('event-cursor',{})
         return entityEl 
     },
     createThumbnail:function(item){
@@ -81,7 +82,7 @@ AFRAME.registerComponent('tour',{
             value:item.title,
         })
         const elPos = pos
-        elPos.y = 0
+        elPos.y = -20
         entityEl.setAttribute('position',elPos)
         entityEl.setAttribute('visible',true)
         return entityEl
